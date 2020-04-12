@@ -1,0 +1,2 @@
+students.score = students['score'].replace('[\%,]', '', regex =True)
+students.score = pd.to_numeric(students.score)
