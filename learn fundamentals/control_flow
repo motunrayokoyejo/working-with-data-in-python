@@ -1,0 +1,44 @@
+def ground_shipping(weight):
+  if weight<=2:
+      cost = weight * 1.50 +20.00
+      return cost
+  elif weight > 2 and  weight <=6:
+    cost = weight * 3+20
+    return cost
+  elif weight > 6 and weight <=10:
+    cost = weight *  4+20
+    return cost
+  elif weight > 10:
+    cost = weight *  4.75+20
+    return cost
+package =ground_shipping(8.4)
+print(package)
+
+premium_shipping = 125.00
+
+
+def drone_shipping(weight):
+  if weight<=2:
+    cost = weight * 4.5
+    return cost
+  elif weight > 2 and  weight <=6:
+    cost = weight * 9
+    return cost
+  elif weight > 6 and weight <=10:
+    cost = weight * 12
+    return cost
+  elif weight > 10:
+    cost = weight * 14.25
+    return cost
+print(drone_shipping(1.5))
+
+
+def all_shipping(weight):
+  if (ground_shipping(weight)< drone_shipping(weight)) and (ground_shipping(weight) < premium_shipping):
+    return ground_shiping(weight)
+  elif drone_shipping(weight) < premium_shipping:
+    return drone_shipping(weight)
+  else:
+    return premium_shipping
+  
+print(all_shipping(41.5))
